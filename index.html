@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Termo de Responsabilidade – Abertura de Porta Externa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://i.postimg.cc/wT3r1R62/papel-timbrado-jpg.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top center;
+      margin: 0;
+      padding-top: 220px; /* Desce o conteúdo para não cobrir o logotipo */
+      display: flex;
+      justify-content: center;
+    }
+
+    form, h1, .term-text {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 700px;
+    }
+
+    h1 {
+      color: #003366;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"], input[type="date"], textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+
+    .radio-group {
+      margin-top: 5px;
+    }
+
+    .radio-group label {
+      font-weight: normal;
+      margin-right: 20px;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 10px 20px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background-color: #0055a5;
+    }
+
+    .term-text {
+      white-space: pre-wrap;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      margin-bottom: 25px;
+      max-height: 250px;
+      overflow-y: auto;
+    }
+
+    .ip-group {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 6px;
+      background-color: #fafafa;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Termo de Responsabilidade – Abertura de Porta Externa</h1>
+
+    <div class="term-text">
+Prezados(as) Clientes,
+
+A Canaã Telecom oferece, por padrão, uma camada adicional de segurança à sua conexão por meio de nosso firewall, que protege sua rede contra ameaças externas e contribui para a estabilidade da sua internet.
+
+No entanto, conforme sua solicitação para a abertura de uma porta externa visando acesso remoto, é fundamental que você esteja ciente dos riscos envolvidos ao alterar essa proteção.
+
+Riscos associados à abertura de porta externa:
+
+- Exposição a ataques cibernéticos: A ausência de barreiras pode facilitar tentativas de invasão por hackers e acessos não autorizados à sua rede.
+- Roubo de informações sensíveis: Dados como senhas, informações bancárias e arquivos pessoais podem ser interceptados por terceiros mal-intencionados.
+- Instabilidade da conexão: O tráfego adicional e não autorizado pode causar lentidão ou até interrupções no serviço.
+- Infecção por vírus e malware: A diminuição da proteção aumenta as chances de softwares maliciosos atingirem seus dispositivos.
+- Uso indevido da sua rede: Criminosos podem utilizar sua conexão para atividades ilegais, comprometendo sua segurança e responsabilidade legal.
+
+Recomendação da Canaã Telecom:
+
+Entendemos sua necessidade de acesso remoto e, por isso, recomendamos a instalação de medidas internas de segurança, como senhas fortes, autenticação em duas etapas e restrição de IPs, para que os acessos sejam devidamente controlados e seguros.
+
+Confirmação da Solicitação:
+
+Declaro estar ciente dos riscos mencionados acima e solicito, sob minha responsabilidade, a abertura de porta externa na minha rede.
+    </div>
+
+    <form action="https://formspree.io/f/mrbllwod" method="POST" id="formulario">
+      <label for="nome">Nome completo:</label>
+      <input type="text" id="nome" name="nome_completo" required />
+
+      <label for="cpf_cnpj">CPF ou CNPJ:</label>
+      <input type="text" id="cpf_cnpj" name="cpf_cnpj" required />
+
+      <label>Deseja acesso ao roteador?:</label>
+      <div class="radio-group">
+        <label><input type="radio" name="acesso_roteador" value="SIM" required /> SIM</label>
+        <label><input type="radio" name="acesso_roteador" value="NÃO" /> NÃO</label>
+      </div>
+
+      <div id="ip-container">
+        <div class="ip-group" data-index="1">
+          <label for="ip_ports_1">Endereço IP e Portas (Informe o IP e as portas que deseja para o mesmo):</label>
+          <input type="text" id="ip_ports_1" name="ip_ports_1" required />
+
+          <label for="finalidade_1">Qual finalidade da abertura:</label>
+          <input type="text" id="finalidade_1" name="finalidade_1" required />
+        </div>
+      </div>
+
+      <label>Deseja incluir outro IP com abertura de portas?</label>
+      <div class="radio-group" id="mais-ip-opcao">
+        <label><input type="radio" name="mais_ip" value="SIM" /> SIM</label>
+        <label><input type="radio" name="mais_ip" value="NÃO" checked /> NÃO</label>
+      </div>
+
+      <label>Protocolo:</label>
+      <div class="radio-group">
+        <label><input type="radio" name="protocolo" value="TCP" required /> TCP</label>
+        <label><input type="radio" name="protocolo" value="UDP" /> UDP</label>
+        <label><input type="radio" name="protocolo" value="Ambos" /> Ambos</label>
+      </div>
+
+      <label for="data">Data:</label>
+      <input type="date" id="data" name="data" required />
+
+      <label for="assinatura">Assinatura (nome completo):</label>
+      <input type="text" id="assinatura" name="assinatura" required />
+
+      <button type="submit">Enviar solicitação</button>
+    </form>
+  </div>
+
+  <script>
+    const ipContainer = document.getElementById('ip-container');
+    const maisIpOpcao = document.getElementById('mais-ip-opcao');
+
+    maisIpOpcao.addEventListener('change', function(event) {
+      if (event.target.name === 'mais_ip' && event.target.value === 'SIM') {
+        adicionarCamposIp();
+        event.target.checked = false;
+      }
+    });
+
+    function adicionarCamposIp() {
+      const numIpGrupos = ipContainer.querySelectorAll('.ip-group').length + 1;
+
+      const div = document.createElement('div');
+      div.classList.add('ip-group');
+      div.setAttribute('data-index', numIpGrupos);
+
+      const labelIp = document.createElement('label');
+      labelIp.setAttribute('for', 'ip_ports_' + numIpGrupos);
+      labelIp.textContent = 'Endereço IP e Portas (Informe o IP e as portas que deseja para o mesmo):';
+
+      const inputIp = document.createElement('input');
+      inputIp.type = 'text';
+      inputIp.id = 'ip_ports_' + numIpGrupos;
+      inputIp.name = 'ip_ports_' + numIpGrupos;
+      inputIp.required = true;
+
+      const labelFinalidade = document.createElement('label');
+      labelFinalidade.setAttribute('for', 'finalidade_' + numIpGrupos);
+      labelFinalidade.textContent = 'Qual finalidade da abertura:';
+
+      const inputFinalidade = document.createElement('input');
+      inputFinalidade.type = 'text';
+      inputFinalidade.id = 'finalidade_' + numIpGrupos;
+      inputFinalidade.name = 'finalidade_' + numIpGrupos;
+      inputFinalidade.required = true;
+
+      div.appendChild(labelIp);
+      div.appendChild(inputIp);
+      div.appendChild(labelFinalidade);
+      div.appendChild(inputFinalidade);
+
+      ipContainer.appendChild(div);
+    }
+  </script>
+</body>
+</html>
